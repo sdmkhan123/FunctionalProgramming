@@ -4,21 +4,36 @@ namespace FunctionalProgramming
 {
     class Program
     {
-        public static void checkEvenOdd(int num)
+        public static void toCheckAlphabet(char ch)
         {
-            if (num % 2 == 0)
+            switch (ch)
             {
-                Console.WriteLine("Given num is even");
+                case 'a':
+                    Console.WriteLine("The Alphabet is vowel");
+                    break;
+                case 'i':
+                    Console.WriteLine("The Alphabet is vowel");
+                    break;
+                case 'o':
+                    Console.WriteLine("The Alphabet is vowel");
+                    break;
+                case 'u':
+                    Console.WriteLine("The Alphabet is vowel");
+                    break;
+                case 'e':
+                    Console.WriteLine("The Alphabet is vowel");
+                    break;
+                default:
+                    Console.WriteLine("The Alphabet is consonant");
+                    break;
             }
-            else
-                Console.WriteLine("Given num is odd");
         }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Functional Programming");
-            Console.WriteLine("Enter a num ");
-            int num = Convert.ToInt32(Console.ReadLine());
-            checkEvenOdd(num);
+            Console.Write("Input an Alphabet (a-z OR A-Z) : ");
+            char ch = Convert.ToChar(Console.ReadLine().ToLower());
+            toCheckAlphabet(ch);
         }
     }
 }
