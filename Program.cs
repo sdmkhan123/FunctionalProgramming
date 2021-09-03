@@ -6,17 +6,15 @@ namespace FunctionalProgramming
     {
         public const int flipHead = 0;
         public const int flipTail = 1;
-        static void Main(string[] args)
+        public static void flipCoinPercentage(int n)
         {
-            Console.WriteLine("Welcome to Functional Programming");
-            int n = Convert.ToInt32(Console.ReadLine());
             int headCount = 0;
             int tailCount = 0;
-            for (int i=0; i<n; i++)
+            for (int i = 0; i < n; i++)
             {
                 Random random = new Random();
                 int flipCheck = random.Next(0, 2);
-                if(flipCheck == flipHead)
+                if (flipCheck == flipHead)
                 {
                     headCount++;
                 }
@@ -25,10 +23,17 @@ namespace FunctionalProgramming
                     tailCount++;
                 }
             }
-            double headPercentage = 100 * headCount / n;
-            double tailPercentage = 100 * tailCount / n;
+            double headPercentage =(double) 100 * headCount / n;
+            double tailPercentage =(double) 100 * tailCount / n;
             Console.WriteLine("head percentage is " + headPercentage);
             Console.WriteLine("tail percentage is " + tailPercentage);
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Welcome to Functional Programming");
+            Console.WriteLine("Enter num of times coin flipped");
+            int num = Convert.ToInt32(Console.ReadLine());
+            flipCoinPercentage(num);
         }
     }
 }
