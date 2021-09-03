@@ -4,22 +4,21 @@ namespace FunctionalProgramming
 {
     class Program
     {
-        public static void swapTwoNum(int num1, int num2)
+        public static void checkEvenOdd(int num)
         {
-            Console.WriteLine("Before swapping num1 and num2 are " + num1 + " " + num2);
-            int temp = num1;
-            num1 = num2;
-            num2 = temp;
-            Console.WriteLine("After swapping num1 and num2 are " + num1 + " " + num2);
+            if (num % 2 == 0)
+            {
+                Console.WriteLine("Given num is even");
+            }
+            else
+                Console.WriteLine("Given num is odd");
         }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Functional Programming");
-            Console.WriteLine("Enter num2 ");
-            int num1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter num1 ");
-            int num2 = Convert.ToInt32(Console.ReadLine());
-            swapTwoNum(num1, num2);
+            Console.WriteLine("Enter a num ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            checkEvenOdd(num);
         }
     }
 }
