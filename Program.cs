@@ -4,36 +4,21 @@ namespace FunctionalProgramming
 {
     class Program
     {
-        public const int flipHead = 0;
-        public const int flipTail = 1;
-        public static void flipCoinPercentage(int n)
+        public static void QuotientAndRemainder(int dividend, int divisor)
         {
-            int headCount = 0;
-            int tailCount = 0;
-            for (int i = 0; i < n; i++)
-            {
-                Random random = new Random();
-                int flipCheck = random.Next(0, 2);
-                if (flipCheck == flipHead)
-                {
-                    headCount++;
-                }
-                else
-                {
-                    tailCount++;
-                }
-            }
-            double headPercentage =(double) 100 * headCount / n;
-            double tailPercentage =(double) 100 * tailCount / n;
-            Console.WriteLine("head percentage is " + headPercentage);
-            Console.WriteLine("tail percentage is " + tailPercentage);
+            int quotient = dividend / divisor;
+            int remainder = dividend % divisor;
+            Console.WriteLine("Quotient = " + quotient);
+            Console.WriteLine("Remainder = " + remainder);
         }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Functional Programming");
-            Console.WriteLine("Enter num of times coin flipped");
-            int num = Convert.ToInt32(Console.ReadLine());
-            flipCoinPercentage(num);
+            Console.WriteLine("Enter Dividend ");
+            int dividend = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Divisor ");
+            int divisor = Convert.ToInt32(Console.ReadLine());
+            QuotientAndRemainder(dividend, divisor);
         }
     }
 }
