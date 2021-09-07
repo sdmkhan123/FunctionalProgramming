@@ -4,21 +4,21 @@ namespace FunctionalProgramming
 {
     class Program
     {
-        static void tableOfPower(int n)
+        static void HarmonicNthNumber(int N)
         {
-            int power = 1;
-            for ( int i=1; i<=n; i++)
+            float harmonic = 1F;
+            for (int i = 2; i <= N; i++)
             {
-                Console.WriteLine(power);
-                power *= 2;
+                harmonic += (float)1 / i;
             }
+            Console.Write("the nth Harmonic num is " + harmonic);
         }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Functional Programming");
             Console.WriteLine("enter the value of n");
             int n = Convert.ToInt32(Console.ReadLine());
-            tableOfPower(n);
+            HarmonicNthNumber(n);
         }
     }
 }
