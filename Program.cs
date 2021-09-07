@@ -4,36 +4,35 @@ namespace FunctionalProgramming
 {
     class Program
     {
-        public static void toCheckAlphabet(char ch)
+        public static void LargestAmongThreeNum(int num1, int num2, int num3)
         {
-            switch (ch)
+            if (num1 > num2)
             {
-                case 'a':
-                    Console.WriteLine("The Alphabet is vowel");
-                    break;
-                case 'i':
-                    Console.WriteLine("The Alphabet is vowel");
-                    break;
-                case 'o':
-                    Console.WriteLine("The Alphabet is vowel");
-                    break;
-                case 'u':
-                    Console.WriteLine("The Alphabet is vowel");
-                    break;
-                case 'e':
-                    Console.WriteLine("The Alphabet is vowel");
-                    break;
-                default:
-                    Console.WriteLine("The Alphabet is consonant");
-                    break;
+                if (num1 > num3)
+                {
+                    Console.WriteLine("Num1 is the largest");
+                }
+                else
+                {
+                    Console.WriteLine("Num3 is the largest");
+                }
             }
+            else if (num2 > num3)
+                Console.WriteLine("Num2 is the largest");
+            else
+                Console.WriteLine("Num3 is the largest");
         }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Functional Programming");
-            Console.Write("Input an Alphabet (a-z OR A-Z) : ");
-            char ch = Convert.ToChar(Console.ReadLine().ToLower());
-            toCheckAlphabet(ch);
+            Console.WriteLine("enter num1 ");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter num2 ");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter num3 ");
+            int num3 = Convert.ToInt32(Console.ReadLine());
+            LargestAmongThreeNum(num1, num2, num3);
         }
     }
 }
