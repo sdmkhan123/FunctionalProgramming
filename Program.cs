@@ -4,31 +4,21 @@ namespace FunctionalProgramming
 {
     class Program
     {
-        static void PrimeFactorization(int num)
+        public static void QuotientAndRemainder(int dividend, int divisor)
         {
-            Console.Write("Prime factors of a given num are ");
-            while (num % 2 == 0)
-            {
-                Console.Write(2 + " ");
-                num /= 2;
-            }
-            for (int i = 3; i <= Math.Sqrt(num); i++)
-            {
-                while(num%i == 0)
-                {
-                    Console.Write(i + " ");
-                    num /= i;
-                }
-            }
-            if (num > 2)
-                Console.Write(num);
+            int quotient = dividend / divisor;
+            int remainder = dividend % divisor;
+            Console.WriteLine("Quotient = " + quotient);
+            Console.WriteLine("Remainder = " + remainder);
         }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Functional Programming");
-            Console.WriteLine("enter the value of n");
-            int num = Convert.ToInt32(Console.ReadLine());
-            PrimeFactorization(num);
+            Console.WriteLine("Enter Dividend ");
+            int dividend = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Divisor ");
+            int divisor = Convert.ToInt32(Console.ReadLine());
+            QuotientAndRemainder(dividend, divisor);
         }
     }
 }
