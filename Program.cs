@@ -4,21 +4,31 @@ namespace FunctionalProgramming
 {
     class Program
     {
-        static void HarmonicNthNumber(int N)
+        static void PrimeFactorization(int num)
         {
-            float harmonic = 1F;
-            for (int i = 2; i <= N; i++)
+            Console.Write("Prime factors of a given num are ");
+            while (num % 2 == 0)
             {
-                harmonic += (float)1 / i;
+                Console.Write(2 + " ");
+                num /= 2;
             }
-            Console.Write("the nth Harmonic num is " + harmonic);
+            for (int i = 3; i <= Math.Sqrt(num); i++)
+            {
+                while(num%i == 0)
+                {
+                    Console.Write(i + " ");
+                    num /= i;
+                }
+            }
+            if (num > 2)
+                Console.Write(num);
         }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Functional Programming");
             Console.WriteLine("enter the value of n");
-            int n = Convert.ToInt32(Console.ReadLine());
-            HarmonicNthNumber(n);
+            int num = Convert.ToInt32(Console.ReadLine());
+            PrimeFactorization(num);
         }
     }
 }
